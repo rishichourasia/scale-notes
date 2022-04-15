@@ -1,0 +1,44 @@
+@import url("/src/styles/main.css");
+
+.nav {
+	margin-top: 0;
+	background-color: var(--main-bg-color);
+	color: var(--dark-text-color);
+	z-index: 1;
+	padding-right: 25px;
+	box-shadow: var(--light-box-shadow);
+}
+
+.menu-logo {
+	justify-content: flex-start;
+	margin-left: 1rem;
+}
+
+.logo-svg {
+	width: 80%;
+}
+
+.menu-btn {
+	width: 3rem;
+}
+.nav-links {
+	width: 10%;
+	margin-left: auto;
+	justify-content: space-around;
+}
+
+@media only screen and (max-width: 780px) {
+	.nav {
+		padding-right: 0;
+	}
+	.nav-btn {
+		display: flex;
+		align-items: center;
+		margin: 10px;
+		margin-left: 25px;
+	}
+	.nav button {
+		margin: 5px;
+		padding: auto;
+	}
+}

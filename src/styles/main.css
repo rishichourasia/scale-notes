@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap");
+@import url("https://scale-ui.netlify.app/Styles/style.css");
 
 :root {
 	--main-bg-color: rgb(252, 252, 252);
@@ -16,6 +17,7 @@
 	--info-card-bg-color: rgb(236, 236, 236);
 	--info-card-light-bg-color: rgb(242, 242, 242);
 	--light-bg-color: rgb(124, 124, 124);
+	--light-grey-color: rgb(180, 180, 180);
 }
 
 * {
@@ -53,4 +55,8 @@ a {
 	background-color: transparent;
 	border: var(--outlined-btn-border);
 	color: var(--dark-text-color);
+}
+.main {
+	display: grid;
+	grid-template-columns: 15% 85%;
 }

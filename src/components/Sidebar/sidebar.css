@@ -1,0 +1,31 @@
+.fa-size {
+	font-size: 1.5rem;
+}
+
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	position: sticky;
+	margin-top: 5%;
+}
+.sidebar-label {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 12px;
+	padding-left: 1.5rem;
+	margin-top: 0.2rem;
+	border-radius: 0 2em 2em 0;
+	cursor: pointer;
+}
+
+.label-icon {
+	margin-right: 1rem;
+}
+.label-text {
+	font-size: 1.2rem;
+}
+
+.sidebar-label:hover {
+	background-color: var(--light-grey-color);
+}
