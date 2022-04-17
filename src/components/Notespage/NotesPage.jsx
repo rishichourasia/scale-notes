@@ -22,7 +22,7 @@ export const NotesPage = () => {
 		const localToken = localStorage.getItem("token");
 		setToken(localToken);
 	}, []);
-
+	console.log(token);
 	return (
 		<div className="main">
 			<Sidebar />
