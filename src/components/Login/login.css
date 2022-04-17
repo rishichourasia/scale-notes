@@ -1,0 +1,51 @@
+@import url("/src/styles/main.css");
+
+.login-container {
+	width: 23rem;
+	margin: auto;
+	margin-top: 6rem;
+	height: fit-content;
+	padding: 15px;
+	border-radius: 5px;
+	box-shadow: var(--dark-box-shadow);
+	display: flex;
+	flex-direction: column;
+}
+
+.login-container input {
+	width: auto;
+	border-radius: 4px;
+	font-size: 0.8rem;
+	font-weight: 500;
+}
+
+.login-container p {
+	font-weight: 700;
+	font-size: 1.7rem;
+	margin-bottom: 15px;
+}
+
+.label input {
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.signup-cta {
+	text-decoration: none;
+	color: var(--grey-text-color);
+	margin: auto;
+}
+
+.signup-cta p {
+	font-size: 1rem;
+	margin-bottom: 0;
+}
+
+.signup-cta span {
+	color: var(--dark-text-color);
+	text-decoration: underline;
+}
+.title {
+	margin: auto;
+}

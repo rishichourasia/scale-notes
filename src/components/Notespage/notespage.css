@@ -1,0 +1,62 @@
+.inputbox {
+	width: 35%;
+	border-radius: 0.5em;
+	padding: 2px;
+	border: var(--inputbox-radius);
+	box-shadow: var(--inputbox-shadow);
+}
+
+.inputdiv {
+	display: flex;
+	justify-content: center;
+	padding-top: 1rem;
+}
+.inputbox input {
+	border: none;
+	font-size: 1.1rem;
+	margin: 5px 10px 5px 10px;
+	padding: 5px;
+}
+.input-cta {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	flex-direction: row-reverse;
+}
+
+.selective-cta {
+	display: flex;
+	flex-direction: row;
+	width: 40%;
+	align-items: center;
+}
+
+.selective-cta span,
+label {
+	margin: 0 5px 0 5px;
+	font-size: 1.2rem;
+}
+.selective-cta label {
+	font-size: 1rem;
+}
+
+.save-note {
+	padding: 7px;
+	margin: 0;
+	font-size: 0.9rem;
+}
+.notes-display {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 5rem;
+	width: 100%;
+	flex-direction: row;
+}
+
+.notecard {
+	padding: 10px;
+	box-shadow: var(--light-box-shadow);
+	border-radius: 0.3rem;
+	margin-left: 3rem;
+	margin-bottom: 2rem;
+}
