@@ -51,7 +51,7 @@ const restoreArchive = async (dispatchNotes, note) => {
 const deleteArchive = async (dispatchNotes, note) => {
 	const authToken = localStorage.getItem("token");
 	const Headers = { authorization: authToken };
-	console.log("Gello");
+
 	try {
 		const response = await axios.delete(`/api/archives/delete/${note._id}`, {
 			headers: Headers,
