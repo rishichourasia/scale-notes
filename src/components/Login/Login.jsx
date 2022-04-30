@@ -1,27 +1,10 @@
-import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/auth-context";
+import { handleLogin } from "../../utilis/login-signup";
 import "./login.css";
 
 export const Login = () => {
-	const { setToken } = useAuth();
 	const navigate = useNavigate();
-
-	const handleLogin = async () => {
-		try {
-			const response = await axios.post("/api/auth/login", {
-				email: "adarshbalika@gmail.com",
-				password: "adarsh",
-			});
-			localStorage.setItem("token", response.data.encodedToken);
-			setToken(response.data.encodedToken);
-			console.log(response.data.encodedToken ? "Logged in" : "Error");
-			navigate("/");
-		} catch (err) {
-			console.log(err);
-		}
-	};
 
 	return (
 		<div className="login-container">
@@ -45,10 +28,10 @@ export const Login = () => {
 			<button
 				className="btn btn-primary"
 				onClick={() => {
-					handleLogin();
+					handleLogin(navigate);
 				}}
 			>
-				Login
+				Login using test credentials
 			</button>
 			<div className="signup-cta">
 				<p>

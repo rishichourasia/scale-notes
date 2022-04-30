@@ -56,7 +56,56 @@ label {
 .notecard {
 	padding: 10px;
 	box-shadow: var(--light-box-shadow);
-	border-radius: 0.3rem;
+	border-radius: 0.4rem;
 	margin-left: 3rem;
 	margin-bottom: 2rem;
+	min-width: 13rem;
+	display: flex;
+	min-height: 8rem;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.notecard-cta {
+	margin-top: auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.cta-box {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.note-content {
+	margin-top: 0.7rem;
+}
+
+.note-cta {
+	cursor: pointer;
+	width: 1.8rem;
+	height: 1.8rem;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+}
+.note-cta:hover {
+	background-color: var(--light-grey-color);
+}
+.label-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+}
+
+.pin-title {
+	display: flex;
+}
+
+.pin-title span {
+	margin-left: auto;
 }
