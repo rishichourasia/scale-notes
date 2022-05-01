@@ -11,11 +11,17 @@ import {
 } from "../../utilis/export-utils";
 
 export const NoteCard = ({ note, pathname }) => {
-	const { _id, title, content } = note;
+	const { _id, title, content, noteColor, label } = note;
 	const { dispatchNotes } = useNotes();
 
+	const checkLabel = label === "Add label";
+
 	return (
-		<div key={_id} className="notecard">
+		<div
+			key={note._id}
+			style={{ backgroundColor: noteColor }}
+			className="notecard"
+		>
 			{pathname !== "/trash" && pathname !== "/archive" ? (
 				<div className="pin-title">
 					<h3 className="note-title">{title}</h3>
@@ -87,7 +93,12 @@ export const NoteCard = ({ note, pathname }) => {
 					)}
 				</div>
 				<div className="label-box">
-					<span>label</span>
+					<span
+						style={checkLabel ? { display: "none" } : { display: "block" }}
+						className="note-label"
+					>
+						{label}
+					</span>
 				</div>
 			</div>
 		</div>
