@@ -1,15 +1,19 @@
 .inputbox {
-	width: 35%;
+	width: 30rem;
 	border-radius: 0.5em;
 	padding: 2px;
 	border: var(--inputbox-radius);
-	box-shadow: var(--inputbox-shadow);
+	position: relative;
+}
+
+.input {
+	width: 95%;
 }
 
 .inputdiv {
 	display: flex;
 	justify-content: center;
-	padding-top: 1rem;
+	padding-top: 2rem;
 }
 .inputbox input {
 	border: none;
@@ -70,6 +74,7 @@ label {
 	margin-top: auto;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .cta-box {
@@ -93,13 +98,11 @@ label {
 	align-content: center;
 }
 .note-cta:hover {
-	background-color: var(--light-grey-color);
+	background-color: var(--light-hover);
 }
 .label-box {
-	display: flex;
+	isplay: flex;
 	align-items: center;
-	justify-content: center;
-	align-content: center;
 }
 
 .pin-title {
@@ -108,4 +111,52 @@ label {
 
 .pin-title span {
 	margin-left: auto;
+}
+.color-div {
+	position: absolute;
+	top: 8.5rem;
+	left: 2rem;
+	background-color: white;
+	width: 15rem;
+	box-shadow: var(--light-box-shadow);
+	justify-content: space-between;
+	padding: 0.3rem;
+	border-radius: 0.5rem;
+}
+
+.color-circle {
+	width: 2.1rem;
+	height: 2.1rem;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.label-div {
+	flex-direction: column;
+	position: absolute;
+	top: 6.5rem;
+	left: 5.8rem;
+	background-color: white;
+	width: auto;
+	box-shadow: var(--light-box-shadow);
+	justify-content: space-between;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+}
+
+.notelabel-text {
+	font-size: 1rem;
+	padding: 3px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.notelabel-text:hover {
+	background-color: var(--light-hover);
+}
+
+.note-label {
+	border: var(--light-label-border);
+	border-radius: 5px;
+	font-size: 13px;
+	padding: 3px;
 }

@@ -11,11 +11,17 @@ import {
 } from "../../utilis/export-utils";
 
 export const NoteCard = ({ note, pathname }) => {
-	const { _id, title, content } = note;
+	const { _id, title, content, noteColor, label } = note;
 	const { dispatchNotes } = useNotes();
 
+	const checkLabel = label === "Add label";
+
 	return (
-		<div key={_id} className="notecard">
+		<div
+			key={note._id}
+			style={{ backgroundColor: noteColor }}
+			className="notecard"
+		>
 			{pathname !== "/trash" && pathname !== "/archive" ? (
 				<div className="pin-title">
 					<h3 className="note-title">{title}</h3>
@@ -32,12 +38,13 @@ export const NoteCard = ({ note, pathname }) => {
 				<div className="cta-box">
 					{pathname !== "/trash" && pathname !== "/archive" ? (
 						<>
-							<span className="note-cta">
+							<span className="note-cta" title="Edit note">
 								<i className="far fa-pen"></i>
 							</span>
 							<span
 								className="note-cta"
 								onClick={() => addToArchive(dispatchNotes, note)}
+								title="Add to archive"
 							>
 								<i className="far fa-inbox-in"></i>
 							</span>
@@ -46,6 +53,7 @@ export const NoteCard = ({ note, pathname }) => {
 								onClick={() =>
 									trashNoteHandler(dispatchNotes, note, deleteNotes)
 								}
+								title="Move to trash"
 							>
 								<i className="far fa-trash-alt"></i>
 							</span>
@@ -55,12 +63,14 @@ export const NoteCard = ({ note, pathname }) => {
 							<span
 								className="note-cta"
 								onClick={() => restoreArchive(dispatchNotes, note)}
+								title="Restore"
 							>
 								<i className="far fa-inbox-out"></i>
 							</span>
 							<span
 								className="note-cta"
 								onClick={() => deleteArchive(dispatchNotes, note)}
+								title="Delete from archive"
 							>
 								<i className="far fa-trash-alt"></i>
 							</span>
@@ -72,6 +82,7 @@ export const NoteCard = ({ note, pathname }) => {
 								onClick={() =>
 									restoreTrashHandler(dispatchNotes, note, addNotes)
 								}
+								title="Restore"
 							>
 								<i className="far fa-trash-restore"></i>
 							</span>
@@ -80,6 +91,7 @@ export const NoteCard = ({ note, pathname }) => {
 								onClick={() =>
 									dispatchNotes({ type: "DELETE_TRASH", payload: _id })
 								}
+								title="Delete from trash"
 							>
 								<i className="far fa-trash-alt"></i>
 							</span>
@@ -87,7 +99,12 @@ export const NoteCard = ({ note, pathname }) => {
 					)}
 				</div>
 				<div className="label-box">
-					<span>label</span>
+					<span
+						style={checkLabel ? { display: "none" } : { display: "block" }}
+						className="note-label"
+					>
+						{label}
+					</span>
 				</div>
 			</div>
 		</div>

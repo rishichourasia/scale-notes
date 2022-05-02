@@ -20,6 +20,8 @@
 	--light-grey-color: rgb(183, 183, 183);
 	--inputbox-shadow: 0 3px 5px rgb(0 0 0 / 20%);
 	--inputbox-radius: 1px solid rgba(189, 189, 189, 0.8);
+	--light-hover: rgb(192, 192, 192);
+	--light-label-border: 1px solid rgba(143, 143, 143, 0.8);
 }
 
 * {

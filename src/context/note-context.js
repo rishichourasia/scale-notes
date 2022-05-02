@@ -7,6 +7,8 @@ const NotesProvider = ({ children }) => {
 	const [note, setNote] = useState({
 		title: "",
 		content: "",
+		noteColor: "",
+		label: "Add label",
 	});
 
 	const [notesState, dispatchNotes] = useReducer(NoteReducer, {
