@@ -12,7 +12,18 @@ import {
 
 export const NoteCard = ({ note, pathname }) => {
 	const { _id, title, content, noteColor, label } = note;
-	const { dispatchNotes } = useNotes();
+	const { dispatchNotes, setNote, setNoteEdit } = useNotes();
+
+	const editnoteHandler = () => {
+		setNoteEdit(true);
+		setNote({
+			title: title,
+			content: content,
+			noteColor: noteColor,
+			label: label,
+			_id: _id,
+		});
+	};
 
 	const checkLabel = label === "Add label";
 
@@ -38,7 +49,11 @@ export const NoteCard = ({ note, pathname }) => {
 				<div className="cta-box">
 					{pathname !== "/trash" && pathname !== "/archive" ? (
 						<>
-							<span className="note-cta" title="Edit note">
+							<span
+								className="note-cta"
+								title="Edit note"
+								onClick={() => editnoteHandler()}
+							>
 								<i className="far fa-pen"></i>
 							</span>
 							<span
