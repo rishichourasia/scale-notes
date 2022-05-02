@@ -14,26 +14,27 @@ export const InputBox = () => {
 	const { isAuth } = useAuth();
 	const navigate = useNavigate();
 
+	const inputResetter = () => {
+		setNote({
+			title: "",
+			content: "",
+			noteColor: "",
+			label: "Add label",
+		});
+	};
+
 	const saveNoteHandle = () => {
 		if (isAuth) {
 			if (noteEdit) {
 				updateNotes(dispatchNotes, note);
-				setNote({
-					title: "",
-					content: "",
-					noteColor: "",
-					label: "Add label",
-				});
+				inputResetter();
 				setNoteEdit(false);
 			} else {
-				addNotes(dispatchNotes, note);
-				fetchNotes(dispatchNotes);
-				setNote({
-					title: "",
-					content: "",
-					noteColor: "",
-					label: "Add label",
-				});
+				if (note.title !== "" && note.content !== "") {
+					addNotes(dispatchNotes, note);
+					fetchNotes(dispatchNotes);
+					inputResetter();
+				}
 			}
 		} else {
 			navigate("/login");

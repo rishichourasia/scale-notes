@@ -16,17 +16,31 @@ export const NotesPage = () => {
 		fetchNotes(dispatchNotes);
 	}, [notesState]);
 
+	const noteLen = notesState.notes.length > 0;
+
 	return (
 		<div className="main">
 			<Sidebar />
 			<div className="notes-page">
 				<InputBox />
-				<div className="notes-display">
-					{notesState.notes.map((item) => (
-						<>
-							<NoteCard note={item} pathname={location.pathname} />
-						</>
-					))}
+				<div
+					className="notes-display"
+					style={!noteLen ? { justifyContent: "center" } : null}
+				>
+					{noteLen ? (
+						notesState.notes.map((item) => (
+							<>
+								<NoteCard note={item} pathname={location.pathname} />
+							</>
+						))
+					) : (
+						<div className="empty-div">
+							<span>
+								<i className="far fa-file-alt empty-icon"></i>
+								<p>Notes you add appear here</p>
+							</span>
+						</div>
+					)}
 				</div>
 			</div>
 		</div>
