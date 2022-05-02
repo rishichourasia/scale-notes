@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/auth-context";
 import { useNotes } from "../../context/note-context";
 import { colourPalette } from "../../utilis/colourPallatte";
 import { fetchNotes, addNotes } from "../../utilis/export-utils";
@@ -9,11 +11,17 @@ export const InputBox = () => {
 	const [colorBox, setcolorBox] = useState(false);
 	const [labelBox, setLabelBox] = useState(false);
 	const { title, content, noteColor, label } = note;
+	const { isAuth } = useAuth();
+	const navigate = useNavigate();
 
 	const saveNoteHandle = () => {
-		addNotes(dispatchNotes, note);
-		fetchNotes(dispatchNotes);
-		setNote({ title: "", content: "", noteColor: "", label: "Add label" });
+		if (isAuth) {
+			addNotes(dispatchNotes, note);
+			fetchNotes(dispatchNotes);
+			setNote({ title: "", content: "", noteColor: "", label: "Add label" });
+		} else {
+			navigate("/login");
+		}
 	};
 
 	const colorHandler = (color) => {

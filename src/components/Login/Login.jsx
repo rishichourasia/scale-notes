@@ -1,10 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/auth-context";
 import { handleLogin } from "../../utilis/login-signup";
 import "./login.css";
 
 export const Login = () => {
 	const navigate = useNavigate();
+	const { isAuth, setAuth } = useAuth();
 
 	return (
 		<div className="login-container">
@@ -28,7 +30,7 @@ export const Login = () => {
 			<button
 				className="btn btn-primary"
 				onClick={() => {
-					handleLogin(navigate);
+					handleLogin(navigate, setAuth, isAuth);
 				}}
 			>
 				Login using test credentials

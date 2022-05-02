@@ -38,12 +38,13 @@ export const NoteCard = ({ note, pathname }) => {
 				<div className="cta-box">
 					{pathname !== "/trash" && pathname !== "/archive" ? (
 						<>
-							<span className="note-cta">
+							<span className="note-cta" title="Edit note">
 								<i className="far fa-pen"></i>
 							</span>
 							<span
 								className="note-cta"
 								onClick={() => addToArchive(dispatchNotes, note)}
+								title="Add to archive"
 							>
 								<i className="far fa-inbox-in"></i>
 							</span>
@@ -52,6 +53,7 @@ export const NoteCard = ({ note, pathname }) => {
 								onClick={() =>
 									trashNoteHandler(dispatchNotes, note, deleteNotes)
 								}
+								title="Move to trash"
 							>
 								<i className="far fa-trash-alt"></i>
 							</span>
@@ -61,12 +63,14 @@ export const NoteCard = ({ note, pathname }) => {
 							<span
 								className="note-cta"
 								onClick={() => restoreArchive(dispatchNotes, note)}
+								title="Restore"
 							>
 								<i className="far fa-inbox-out"></i>
 							</span>
 							<span
 								className="note-cta"
 								onClick={() => deleteArchive(dispatchNotes, note)}
+								title="Delete from archive"
 							>
 								<i className="far fa-trash-alt"></i>
 							</span>
@@ -78,6 +82,7 @@ export const NoteCard = ({ note, pathname }) => {
 								onClick={() =>
 									restoreTrashHandler(dispatchNotes, note, addNotes)
 								}
+								title="Restore"
 							>
 								<i className="far fa-trash-restore"></i>
 							</span>
@@ -86,6 +91,7 @@ export const NoteCard = ({ note, pathname }) => {
 								onClick={() =>
 									dispatchNotes({ type: "DELETE_TRASH", payload: _id })
 								}
+								title="Delete from trash"
 							>
 								<i className="far fa-trash-alt"></i>
 							</span>
