@@ -20,6 +20,7 @@ export const InputBox = () => {
 			content: "",
 			noteColor: "",
 			label: "Add label",
+			pinned: false,
 		});
 	};
 

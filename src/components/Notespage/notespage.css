@@ -179,3 +179,19 @@ label {
 .empty-div {
 	margin-top: 6rem;
 }
+
+.note-type {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.note-type p {
+	margin-bottom: 1rem;
+}
+
+.note-box {
+	display: flex;
+	flex-direction: row;
+}
