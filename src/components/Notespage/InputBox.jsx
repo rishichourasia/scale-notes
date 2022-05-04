@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth-context";
 import { useNotes } from "../../context/note-context";
-import { colourPalette } from "../../utilis/colourPallatte";
+import { colourPalette, labelText } from "../../utilis/colourPallatte";
 import { fetchNotes, addNotes, updateNotes } from "../../utilis/export-utils";
 
 export const InputBox = () => {
@@ -51,8 +51,6 @@ export const InputBox = () => {
 		setNote({ ...note, label: text });
 		setLabelBox(false);
 	};
-
-	const labelText = ["Work", "Important", "Priority", "Home"];
 
 	const checkColor = noteColor === "";
 

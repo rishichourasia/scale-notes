@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { labelText } from "../../utilis/colourPallatte";
 import "./sidebar.css";
 
 const Sidebar = () => {
@@ -40,6 +41,19 @@ const Sidebar = () => {
 					<i className="far fa-tag fa-size"></i>
 				</span>
 				<p className="label-text">label</p>
+			</div>
+			<div className="filter-div">
+				<p className="filter-text">Filters</p>
+				<div className="filter-box">
+					{labelText.map((item) => (
+						<>
+							<label>
+								<input className="filter-input" type="checkbox" />
+								{item}
+							</label>
+						</>
+					))}
+				</div>
 			</div>
 		</div>
 	);
