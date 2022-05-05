@@ -101,7 +101,7 @@ label {
 	background-color: var(--light-hover);
 }
 .label-box {
-	isplay: flex;
+	display: flex;
 	align-items: center;
 }
 
@@ -159,4 +159,67 @@ label {
 	border-radius: 5px;
 	font-size: 13px;
 	padding: 3px;
+}
+
+.empty-div span {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: var(--grey-text-color);
+}
+.empty-div p {
+	font-size: 1.2rem;
+}
+
+.empty-div i {
+	font-size: 5rem;
+	margin-bottom: 1rem;
+}
+
+.empty-div {
+	margin-top: 6rem;
+}
+
+.note-type {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.note-type p {
+	margin-bottom: 1rem;
+}
+
+.note-box {
+	display: flex;
+	flex-direction: row;
+}
+
+.filter-box {
+	display: flex;
+	flex-direction: column;
+}
+
+.filter-div {
+	margin-left: 1.5rem;
+	margin-top: 1rem;
+}
+.filter-text {
+	margin-bottom: 1rem;
+	font-size: 1.2rem;
+}
+
+.filter-input {
+	width: auto;
+	margin: 0;
+	background-color: inherit;
+	border-bottom: 1px solid;
+	font-size: 16px;
+	margin-right: 8px;
+	margin-bottom: 10px;
+}
+
+.filter-box label {
+	font-size: 1rem;
 }

@@ -1,4 +1,6 @@
 import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import { useNotes } from "../../context/note-context";
 import {
 	addNotes,
@@ -8,11 +10,36 @@ import {
 	deleteNotes,
 	restoreTrashHandler,
 	trashNoteHandler,
+	updateNotes,
 } from "../../utilis/export-utils";
 
 export const NoteCard = ({ note, pathname }) => {
-	const { _id, title, content, noteColor, label } = note;
-	const { dispatchNotes } = useNotes();
+	const { _id, title, content, noteColor, label, pinned } = note;
+	const { dispatchNotes, setNote, setNoteEdit } = useNotes();
+	const [pinNote, setPinNote] = useState({});
+
+	const editnoteHandler = () => {
+		setNoteEdit(true);
+		setNote({
+			title: title,
+			content: content,
+			noteColor: noteColor,
+			label: label,
+			_id: _id,
+		});
+	};
+
+	const pinHandler = () => {
+		if (!pinned) {
+			setPinNote({ ...note, pinned: true });
+		} else if (pinned) {
+			setPinNote({ ...note, pinned: false });
+		}
+	};
+
+	useEffect(() => {
+		updateNotes(dispatchNotes, pinNote);
+	}, [pinNote]);
 
 	const checkLabel = label === "Add label";
 
@@ -25,7 +52,7 @@ export const NoteCard = ({ note, pathname }) => {
 			{pathname !== "/trash" && pathname !== "/archive" ? (
 				<div className="pin-title">
 					<h3 className="note-title">{title}</h3>
-					<span className="note-cta">
+					<span className="note-cta" onClick={() => pinHandler()}>
 						<i className="far fa-thumbtack"></i>
 					</span>
 				</div>
@@ -38,7 +65,11 @@ export const NoteCard = ({ note, pathname }) => {
 				<div className="cta-box">
 					{pathname !== "/trash" && pathname !== "/archive" ? (
 						<>
-							<span className="note-cta" title="Edit note">
+							<span
+								className="note-cta"
+								title="Edit note"
+								onClick={() => editnoteHandler()}
+							>
 								<i className="far fa-pen"></i>
 							</span>
 							<span

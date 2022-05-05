@@ -9,7 +9,9 @@ const NotesProvider = ({ children }) => {
 		content: "",
 		noteColor: "",
 		label: "Add label",
+		pinned: false,
 	});
+	const [noteEdit, setNoteEdit] = useState(false);
 
 	const [notesState, dispatchNotes] = useReducer(NoteReducer, {
 		notes: [],
@@ -18,7 +20,16 @@ const NotesProvider = ({ children }) => {
 	});
 
 	return (
-		<NotesContext.Provider value={{ notesState, dispatchNotes, note, setNote }}>
+		<NotesContext.Provider
+			value={{
+				notesState,
+				dispatchNotes,
+				note,
+				setNote,
+				noteEdit,
+				setNoteEdit,
+			}}
+		>
 			{children}
 		</NotesContext.Provider>
 	);

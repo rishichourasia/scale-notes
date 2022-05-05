@@ -3,22 +3,40 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth-context";
 import { useNotes } from "../../context/note-context";
-import { colourPalette } from "../../utilis/colourPallatte";
-import { fetchNotes, addNotes } from "../../utilis/export-utils";
+import { colourPalette, labelText } from "../../utilis/colourPallatte";
+import { fetchNotes, addNotes, updateNotes } from "../../utilis/export-utils";
 
 export const InputBox = () => {
-	const { dispatchNotes, note, setNote } = useNotes();
+	const { dispatchNotes, note, setNote, noteEdit, setNoteEdit } = useNotes();
 	const [colorBox, setcolorBox] = useState(false);
 	const [labelBox, setLabelBox] = useState(false);
 	const { title, content, noteColor, label } = note;
 	const { isAuth } = useAuth();
 	const navigate = useNavigate();
 
+	const inputResetter = () => {
+		setNote({
+			title: "",
+			content: "",
+			noteColor: "",
+			label: "Add label",
+			pinned: false,
+		});
+	};
+
 	const saveNoteHandle = () => {
 		if (isAuth) {
-			addNotes(dispatchNotes, note);
-			fetchNotes(dispatchNotes);
-			setNote({ title: "", content: "", noteColor: "", label: "Add label" });
+			if (noteEdit) {
+				updateNotes(dispatchNotes, note);
+				inputResetter();
+				setNoteEdit(false);
+			} else {
+				if (note.title !== "" && note.content !== "") {
+					addNotes(dispatchNotes, note);
+					fetchNotes(dispatchNotes);
+					inputResetter();
+				}
+			}
 		} else {
 			navigate("/login");
 		}
@@ -33,8 +51,6 @@ export const InputBox = () => {
 		setNote({ ...note, label: text });
 		setLabelBox(false);
 	};
-
-	const labelText = ["Work", "Important", "Priority", "Home"];
 
 	const checkColor = noteColor === "";
 

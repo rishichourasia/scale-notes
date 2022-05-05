@@ -17,5 +17,7 @@ const NoteReducer = (state, action) => {
 			return state;
 	}
 };
+// case "ADD_TO_PIN":
+// 			return { ...state, pinned: [...state.pinned, action.payload] };
 
 export { NoteReducer };

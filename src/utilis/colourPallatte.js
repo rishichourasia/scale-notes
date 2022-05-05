@@ -7,4 +7,6 @@ const colourPalette = [
 	"#f7c2ff",
 ];
 
-export { colourPalette };
+const labelText = ["Work", "Important", "Priority", "Home"];
+
+export { colourPalette, labelText };
