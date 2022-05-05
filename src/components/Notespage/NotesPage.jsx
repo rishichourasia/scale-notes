@@ -17,10 +17,29 @@ export const NotesPage = () => {
 	}, [notesState]);
 
 	const pinnedNotes = notesState.notes.filter((item) => item.pinned !== false);
-	const allNotes = notesState.notes.filter((item) => item.pinned === false);
+	const allNotes = notesState.notes.filter(
+		(item) => item.pinned === false && item.label === "Add Status"
+	);
+
+	const todoNotes = notesState.notes.filter(
+		(item) => item.label === "Todo" && item.pinned === false
+	);
+	const assignedNotes = notesState.notes.filter(
+		(item) => item.label === "Assigned" && item.pinned === false
+	);
+	const inProgressNotes = notesState.notes.filter(
+		(item) => item.label === "In Progress" && item.pinned === false
+	);
+	const doneNotes = notesState.notes.filter(
+		(item) => item.label === "Done" && item.pinned === false
+	);
 
 	const pinnedLen = pinnedNotes.length > 0;
 	const noteLen = notesState.notes.length > 0;
+	const todoLen = todoNotes.length > 0;
+	const assignedLen = assignedNotes.length > 0;
+	const inProgressLen = inProgressNotes.length > 0;
+	const doneLen = doneNotes.length > 0;
 
 	return (
 		<div className="main">
@@ -37,7 +56,7 @@ export const NotesPage = () => {
 								className="note-type"
 								style={pinnedLen ? { display: "flex" } : { display: "none" }}
 							>
-								<p>Pinned Notes</p>
+								<p>Pinned Tasks</p>
 								<div className="note-box">
 									{pinnedNotes.map((item) => (
 										<>
@@ -46,8 +65,62 @@ export const NotesPage = () => {
 									))}
 								</div>
 							</div>
+							<div
+								className="note-type"
+								style={todoLen ? { display: "flex" } : { display: "none" }}
+							>
+								<p>Todo Tasks</p>
+								<div className="note-box">
+									{todoNotes.map((item) => (
+										<>
+											<NoteCard note={item} pathname={location.pathname} />
+										</>
+									))}
+								</div>
+							</div>
+							<div
+								className="note-type"
+								style={assignedLen ? { display: "flex" } : { display: "none" }}
+							>
+								<p>Assigned Tasks</p>
+								<div className="note-box">
+									{assignedNotes.map((item) => (
+										<>
+											<NoteCard note={item} pathname={location.pathname} />
+										</>
+									))}
+								</div>
+							</div>
+							<div
+								className="note-type"
+								style={
+									inProgressLen ? { display: "flex" } : { display: "none" }
+								}
+							>
+								<p>In Progress Tasks</p>
+								<div className="note-box">
+									{inProgressNotes.map((item) => (
+										<>
+											<NoteCard note={item} pathname={location.pathname} />
+										</>
+									))}
+								</div>
+							</div>
+							<div
+								className="note-type"
+								style={doneLen ? { display: "flex" } : { display: "none" }}
+							>
+								<p>Done Tasks</p>
+								<div className="note-box">
+									{doneNotes.map((item) => (
+										<>
+											<NoteCard note={item} pathname={location.pathname} />
+										</>
+									))}
+								</div>
+							</div>
 							<div className="note-type">
-								<p>Other Notes</p>
+								<p>All Tasks</p>
 								<div className="note-box">
 									{allNotes.map((item) => (
 										<>
@@ -60,8 +133,8 @@ export const NotesPage = () => {
 					) : (
 						<div className="empty-div">
 							<span>
-								<i className="far fa-file-alt empty-icon"></i>
-								<p>Notes you add appear here</p>
+								<i className="far fa-file-check empty-icon"></i>
+								<p>Tasks you add appear here</p>
 							</span>
 						</div>
 					)}

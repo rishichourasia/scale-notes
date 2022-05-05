@@ -41,7 +41,7 @@ export const NoteCard = ({ note, pathname }) => {
 		updateNotes(dispatchNotes, pinNote);
 	}, [pinNote]);
 
-	const checkLabel = label === "Add label";
+	const checkLabel = label === "Add Status";
 
 	return (
 		<div

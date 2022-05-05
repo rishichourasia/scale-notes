@@ -7,6 +7,6 @@ const colourPalette = [
 	"#f7c2ff",
 ];
 
-const labelText = ["Work", "Important", "Priority", "Home"];
+const labelText = ["Todo", "Assigned", "In Progress", "Done"];
 
 export { colourPalette, labelText };

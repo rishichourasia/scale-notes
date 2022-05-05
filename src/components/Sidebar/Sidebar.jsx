@@ -15,9 +15,9 @@ const Sidebar = () => {
 			<NavLink style={getActiveStyle} to="/">
 				<div className="sidebar-label">
 					<span className="label-icon">
-						<i className="far fa-file-alt fa-size"></i>
+						<i className="far fa-file-check fa-size"></i>
 					</span>
-					<p className="label-text">Notes</p>
+					<p className="label-text">Tasks</p>
 				</div>
 			</NavLink>
 			<NavLink style={getActiveStyle} to="/archive">
@@ -47,7 +47,7 @@ const Sidebar = () => {
 				<div className="filter-box">
 					{labelText.map((item) => (
 						<>
-							<label>
+							<label key={item}>
 								<input className="filter-input" type="checkbox" />
 								{item}
 							</label>

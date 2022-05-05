@@ -8,7 +8,7 @@ const NotesProvider = ({ children }) => {
 		title: "",
 		content: "",
 		noteColor: "",
-		label: "Add label",
+		label: "Add Status",
 		pinned: false,
 	});
 	const [noteEdit, setNoteEdit] = useState(false);
