@@ -1,3 +1,4 @@
+export { filterTask } from "./filter";
 export { labelText, colourPalette } from "./colourPallatte";
 export { updateNotes } from "./addNote";
 export { addNotes } from "./addNote";

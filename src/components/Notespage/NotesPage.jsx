@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useNotes } from "../../context/note-context";
-import { fetchNotes } from "../../utilis/export-utils";
+import { fetchNotes, filterTask } from "../../utilis/export-utils";
 import { Sidebar } from "../export";
 import { InputBox } from "./InputBox";
 import { NoteCard } from "./NoteCard";
@@ -16,23 +16,28 @@ export const NotesPage = () => {
 		fetchNotes(dispatchNotes);
 	}, [notesState]);
 
-	const pinnedNotes = notesState.notes.filter((item) => item.pinned !== false);
-	const allNotes = notesState.notes.filter(
+	const filteredTask = filterTask(notesState.notes, notesState.label);
+
+	const pinnedNotes = filteredTask.filter((item) => item.pinned !== false);
+
+	const allNotes = filteredTask.filter(
 		(item) => item.pinned === false && item.label === "Add Status"
 	);
 
-	const todoNotes = notesState.notes.filter(
+	const todoNotes = filteredTask.filter(
 		(item) => item.label === "Todo" && item.pinned === false
 	);
-	const assignedNotes = notesState.notes.filter(
+	const assignedNotes = filteredTask.filter(
 		(item) => item.label === "Assigned" && item.pinned === false
 	);
-	const inProgressNotes = notesState.notes.filter(
+	const inProgressNotes = filteredTask.filter(
 		(item) => item.label === "In Progress" && item.pinned === false
 	);
-	const doneNotes = notesState.notes.filter(
+	const doneNotes = filteredTask.filter(
 		(item) => item.label === "Done" && item.pinned === false
 	);
+
+	// const filterdTasks = filterHandle(notesState.notes , )
 
 	const pinnedLen = pinnedNotes.length > 0;
 	const noteLen = notesState.notes.length > 0;
@@ -40,6 +45,7 @@ export const NotesPage = () => {
 	const assignedLen = assignedNotes.length > 0;
 	const inProgressLen = inProgressNotes.length > 0;
 	const doneLen = doneNotes.length > 0;
+	console.log(filteredTask);
 
 	return (
 		<div className="main">

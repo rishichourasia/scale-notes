@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useNotes } from "../../context/note-context";
 import { labelText } from "../../utilis/colourPallatte";
+import { fetchNotes } from "../../utilis/fetchNotes";
 import "./sidebar.css";
 
 const Sidebar = () => {
@@ -9,6 +11,12 @@ const Sidebar = () => {
 		backgroundColor: isActive ? "var(--primary-color)" : "",
 		color: isActive ? "white" : "black",
 	});
+
+	const { notesState, dispatchNotes } = useNotes();
+
+	// const filterHandle =  (item) => {
+	// return notesState.notes
+	// };
 
 	return (
 		<div className="sidebar">
@@ -48,7 +56,12 @@ const Sidebar = () => {
 					{labelText.map((item) => (
 						<>
 							<label key={item}>
-								<input className="filter-input" type="checkbox" />
+								<input
+									onChange={() => dispatchNotes({ type: item, payload: item })}
+									className="filter-input"
+									type="radio"
+									name="filter"
+								/>
 								{item}
 							</label>
 						</>

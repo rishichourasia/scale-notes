@@ -13,11 +13,33 @@ const NoteReducer = (state, action) => {
 				...state,
 				trash: state.trash.filter((item) => item._id !== action.payload),
 			};
+		case "Todo": {
+			return {
+				...state,
+				label: action.payload,
+			};
+		}
+		case "Assigned": {
+			return {
+				...state,
+				label: action.payload,
+			};
+		}
+		case "In Progress": {
+			return {
+				...state,
+				label: action.payload,
+			};
+		}
+		case "Done": {
+			return {
+				...state,
+				label: action.payload,
+			};
+		}
 		default:
 			return state;
 	}
 };
-// case "ADD_TO_PIN":
-// 			return { ...state, pinned: [...state.pinned, action.payload] };
 
 export { NoteReducer };
