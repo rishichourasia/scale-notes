@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../../context/auth-context";
 import { useNotes } from "../../context/note-context";
 import { labelText } from "../../utilis/colourPallatte";
 import { fetchNotes } from "../../utilis/fetchNotes";
@@ -12,7 +13,8 @@ const Sidebar = () => {
 		color: isActive ? "white" : "black",
 	});
 
-	const { notesState, dispatchNotes } = useNotes();
+	const { dispatchNotes } = useNotes();
+	const { isAuth } = useAuth();
 
 	// const filterHandle =  (item) => {
 	// return notesState.notes
@@ -57,6 +59,7 @@ const Sidebar = () => {
 						<>
 							<label key={item}>
 								<input
+									key={item}
 									onChange={() => dispatchNotes({ type: item, payload: item })}
 									className="filter-input"
 									type="radio"
@@ -67,6 +70,29 @@ const Sidebar = () => {
 						</>
 					))}
 				</div>
+			</div>
+
+			<div className="side-profile">
+				{isAuth ? (
+					<>
+						<div className="first-div">
+							<i class="far fa-user-circle side-icon"></i>
+							<p className="profile-name">Test User</p>
+						</div>
+						<div>
+							<span className="note-cta-sidebar">
+								<i class="far fa-sign-out side-icon"></i>
+							</span>
+						</div>
+					</>
+				) : (
+					<>
+						<div className="first-div">
+							<i class="far fa-exclamation-circle side-icon"></i>
+							<p className="profile-name">Login First</p>
+						</div>
+					</>
+				)}
 			</div>
 		</div>
 	);

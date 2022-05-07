@@ -21,9 +21,6 @@ export const Navbar = () => {
 					<NavLink to="/login">
 						<button className="btn btn-primary">Login</button>
 					</NavLink>
-					<NavLink to="/signup">
-						<button className="btn btn-primary-outlined">Signup</button>
-					</NavLink>
 				</div>
 			</header>
 		</>

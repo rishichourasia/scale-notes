@@ -37,15 +37,12 @@ export const NotesPage = () => {
 		(item) => item.label === "Done" && item.pinned === false
 	);
 
-	// const filterdTasks = filterHandle(notesState.notes , )
-
 	const pinnedLen = pinnedNotes.length > 0;
 	const noteLen = notesState.notes.length > 0;
 	const todoLen = todoNotes.length > 0;
 	const assignedLen = assignedNotes.length > 0;
 	const inProgressLen = inProgressNotes.length > 0;
 	const doneLen = doneNotes.length > 0;
-	console.log(filteredTask);
 
 	return (
 		<div className="main">
