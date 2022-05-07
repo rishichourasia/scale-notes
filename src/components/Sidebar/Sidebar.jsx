@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../context/auth-context";
 import { useNotes } from "../../context/note-context";
@@ -15,10 +15,7 @@ const Sidebar = () => {
 
 	const { dispatchNotes } = useNotes();
 	const { isAuth } = useAuth();
-
-	// const filterHandle =  (item) => {
-	// return notesState.notes
-	// };
+	const [checkRadio, setRadio] = useState(true);
 
 	return (
 		<div className="sidebar">
@@ -53,14 +50,42 @@ const Sidebar = () => {
 				<p className="label-text">label</p>
 			</div>
 			<div className="filter-div">
-				<p className="filter-text">Filters</p>
+				<div className="filter-text-div">
+					<p className="filter-text">Filters</p>
+					<p
+						className="reset"
+						onClick={() => {
+							setRadio(true);
+							dispatchNotes({ type: "ALL_TASKS" });
+						}}
+					>
+						Reset
+					</p>
+				</div>
+
 				<div className="filter-box">
+					<label>
+						<input
+							checked={checkRadio}
+							onChange={() => {
+								setRadio(checkRadio ? false : true);
+								dispatchNotes({ type: "ALL_TASKS" });
+							}}
+							className="filter-input"
+							type="radio"
+							name="filter"
+						/>
+						All Tasks
+					</label>
 					{labelText.map((item) => (
 						<>
 							<label key={item}>
 								<input
 									key={item}
-									onChange={() => dispatchNotes({ type: item, payload: item })}
+									onChange={() => {
+										setRadio(false);
+										dispatchNotes({ type: item, payload: item });
+									}}
 									className="filter-input"
 									type="radio"
 									name="filter"

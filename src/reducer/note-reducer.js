@@ -37,6 +37,9 @@ const NoteReducer = (state, action) => {
 				label: action.payload,
 			};
 		}
+		case "ALL_TASKS": {
+			return { ...state, label: "Add Status" };
+		}
 		default:
 			return state;
 	}

@@ -69,4 +69,7 @@ a {
 	.main {
 		grid-template-columns: 1fr;
 	}
+	.inputbox {
+		width: 90%;
+	}
 }

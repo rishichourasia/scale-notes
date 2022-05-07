@@ -7,7 +7,7 @@
 	flex-direction: column;
 	position: sticky;
 	margin-top: 5%;
-	height: 90vh;
+	min-height: 90vh;
 }
 .sidebar-label {
 	display: flex;
@@ -65,4 +65,48 @@
 }
 .note-cta-sidebar:hover {
 	background-color: var(--light-grey-color);
+}
+.filter-text-div {
+	display: flex;
+	justify-content: flex-start;
+}
+.filter-text-div p:nth-child(2) {
+	font-weight: 600;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.filter-box {
+	display: flex;
+	flex-direction: column;
+}
+
+.filter-div {
+	margin-left: 1.5rem;
+	margin-top: 1rem;
+}
+.filter-text {
+	margin-bottom: 1rem;
+	font-size: 1.2rem;
+	margin-right: 5rem;
+}
+
+.filter-input {
+	width: auto;
+	margin: 0;
+	background-color: inherit;
+	border-bottom: 1px solid;
+	font-size: 16px;
+	margin-right: 8px;
+	margin-bottom: 10px;
+}
+
+.filter-box label {
+	font-size: 1rem;
+}
+
+@media only screen and (max-width: 780px) {
+	.sidebar {
+		min-height: 60vh;
+	}
 }
