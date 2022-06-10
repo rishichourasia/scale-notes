@@ -7,6 +7,7 @@
 	flex-direction: column;
 	position: sticky;
 	margin-top: 5%;
+	min-height: 90vh;
 }
 .sidebar-label {
 	display: flex;
@@ -25,7 +26,87 @@
 .label-text {
 	font-size: 1.2rem;
 }
+.side-profile {
+	margin-top: auto;
+	display: flex;
+	align-items: center;
+	margin-bottom: 1.2rem;
+	gap: 3rem;
+	margin-left: 1rem;
+}
+.first-div {
+	display: flex;
+	align-items: center;
+	margin-left: 5px;
+	cursor: pointer;
+}
+.side-icon {
+	font-size: 1.5rem;
+}
 
-/* .sidebar-label:hover {
+.profile-name {
+	font-size: 1.2rem;
+}
+.side-icon:nth-child(1) {
+	margin-right: 8px;
+}
+.side-icon:nth-child(2) {
+	cursor: pointer;
+}
+.note-cta-sidebar {
+	cursor: pointer;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: flex-end;
+}
+.note-cta-sidebar:hover {
 	background-color: var(--light-grey-color);
-} */
+}
+.filter-text-div {
+	display: flex;
+	justify-content: flex-start;
+}
+.filter-text-div p:nth-child(2) {
+	font-weight: 600;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.filter-box {
+	display: flex;
+	flex-direction: column;
+}
+
+.filter-div {
+	margin-left: 1.5rem;
+	margin-top: 1rem;
+}
+.filter-text {
+	margin-bottom: 1rem;
+	font-size: 1.2rem;
+	margin-right: 5rem;
+}
+
+.filter-input {
+	width: auto;
+	margin: 0;
+	background-color: inherit;
+	border-bottom: 1px solid;
+	font-size: 16px;
+	margin-right: 8px;
+	margin-bottom: 10px;
+}
+
+.filter-box label {
+	font-size: 1rem;
+}
+
+@media only screen and (max-width: 780px) {
+	.sidebar {
+		min-height: 60vh;
+	}
+}

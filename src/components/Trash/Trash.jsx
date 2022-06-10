@@ -25,7 +25,7 @@ export const Trash = () => {
 						<div className="empty-div">
 							<span>
 								<i className="far fa-trash empty-icon"></i>
-								<p>Trash notes appear here</p>
+								<p>Trash Notes appear here</p>
 							</span>
 						</div>
 					)}

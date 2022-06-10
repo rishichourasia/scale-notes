@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const handleLogin = async (navigate, setAuth, isAuth) => {
+const handleLogin = async (navigate, setAuth) => {
 	try {
 		const response = await axios.post("/api/auth/login", {
-			email: "adarshbalika@gmail.com",
-			password: "adarsh",
+			email: "testuser@gmail.com",
+			password: "test",
 		});
 		localStorage.setItem("token", JSON.stringify(response.data.encodedToken));
 		setAuth(true);

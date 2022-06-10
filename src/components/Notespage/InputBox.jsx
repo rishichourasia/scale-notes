@@ -19,7 +19,7 @@ export const InputBox = () => {
 			title: "",
 			content: "",
 			noteColor: "",
-			label: "Add label",
+			label: "Add Status",
 			pinned: false,
 		});
 	};
@@ -67,7 +67,7 @@ export const InputBox = () => {
 				<input
 					type="text"
 					className="input"
-					placeholder="Title"
+					placeholder="Note Title"
 					value={title}
 					onChange={(e) => {
 						setNote({ ...note, title: e.target.value });
@@ -77,7 +77,7 @@ export const InputBox = () => {
 					<input
 						type="text"
 						className="input"
-						placeholder="Take a note..."
+						placeholder="Note Content"
 						value={content}
 						onChange={(e) => {
 							setNote({ ...note, content: e.target.value });
@@ -88,7 +88,7 @@ export const InputBox = () => {
 							className="btn btn-primary save-note"
 							onClick={() => saveNoteHandle()}
 						>
-							Save Note
+							Add Note
 						</button>
 						<div className="selective-cta">
 							<span
