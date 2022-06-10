@@ -137,7 +137,7 @@ export const NotesPage = () => {
 						<div className="empty-div">
 							<span>
 								<i className="far fa-file-check empty-icon"></i>
-								<p>Tasks you add appear here</p>
+								<p>Notes you add appear here</p>
 							</span>
 						</div>
 					)}

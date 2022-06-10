@@ -24,7 +24,7 @@ const Sidebar = () => {
 					<span className="label-icon">
 						<i className="far fa-file-check fa-size"></i>
 					</span>
-					<p className="label-text">Tasks</p>
+					<p className="label-text">Notes</p>
 				</div>
 			</NavLink>
 			<NavLink style={getActiveStyle} to="/archive">

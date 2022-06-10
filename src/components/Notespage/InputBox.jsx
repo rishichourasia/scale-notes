@@ -67,7 +67,7 @@ export const InputBox = () => {
 				<input
 					type="text"
 					className="input"
-					placeholder="Task Title"
+					placeholder="Note Title"
 					value={title}
 					onChange={(e) => {
 						setNote({ ...note, title: e.target.value });
@@ -77,7 +77,7 @@ export const InputBox = () => {
 					<input
 						type="text"
 						className="input"
-						placeholder="Task Content"
+						placeholder="Note Content"
 						value={content}
 						onChange={(e) => {
 							setNote({ ...note, content: e.target.value });
@@ -88,7 +88,7 @@ export const InputBox = () => {
 							className="btn btn-primary save-note"
 							onClick={() => saveNoteHandle()}
 						>
-							Add Task
+							Add Note
 						</button>
 						<div className="selective-cta">
 							<span

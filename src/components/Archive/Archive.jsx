@@ -26,7 +26,7 @@ export const Archive = () => {
 						<div className="empty-div">
 							<span>
 								<i className="far fa-inbox empty-icon"></i>
-								<p>Archived Task appear here</p>
+								<p>Archived Notes appear here</p>
 							</span>
 						</div>
 					)}
