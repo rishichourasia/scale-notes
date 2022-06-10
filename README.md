@@ -2,6 +2,7 @@
 
 ![Scale Store logo](/public/logo%20simple%20light.svg)
 
+### Minimalist Note Taking and Management Application built using React . Check Out here - [Live Link](https://dev--scale-notes.netlify.app/)
 
 ## Features
 - This is a frontend Note Taking Application created using the mock backend [mockBee](https://github.com/neogcamp/mockBee).
