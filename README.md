@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Scale Notes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Scale Store logo](/public/logo%20simple%20light.svg)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Features
+- This is a frontend Note Taking Application created using the mock backend [mockBee](https://github.com/neogcamp/mockBee).
+- Contains modular React components
+- Easy to use website
+- Responsive
+- Modern and Clean Design
 
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Project Screens and Functionality
+-  Home Page
+> - Landing page with a clean design and a call to action button to create notes
+- Authentication
+> - Login and Sign Up features that will allow notes to be saved according to user
+> - After successful login, user can see a logout button on the navbar
+> - User can logout and new user can login
+- Add Note
+> - After login, user can start creating notes using an add note form. After clicking on Save Note, the added note will be displayed below the add note box.
+> - The note will be saved with the date added displayed, labels and color 
+> - Color Palette can be open while adding note to choose the color from a wide range of options
+- Edit Note
+> - On clicking the pen icon on the saved note, a modal will open up which will allow user to edit the note title, content, color and label.
+> - After clicking on edit, the updated note will be saved.
+- Delete Note
+> - On clicking Trash icon, note will be removed from saved and added to Trash Page. (Cannot be restored from Trash)
+- Archive Note
+> - On clicking the archive icon on the saved note, it will be added to Archive Page.
+> - Note can be restored from Archive, it will be added back to the Saved notes page
+> - Note can be deleted from Archive, it will get permanently deleted
+- Change Note Color
+> - Note color can be changed while adding note, or on editing saved note
+> - Color Palette will be opened to choose from wide variety of colors
+- Create new label
+> - Notes can be labelled while adding, selecting a label from the drop down. The labels can also be edited.
+> - Some labels are available by default, but user can Create New Label from the sidebar, by adding a label and clicking on + button, this will add the new label to the sidebar as well as in the options while adding/editing note.
